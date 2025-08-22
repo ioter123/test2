@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Culture Hub - 한국 문화의 모든 것</title>
+    <meta name="description" content="K-pop, K-drama, 한식, 전통문화, K-beauty, 한국영화 등 다양한 한국 문화를 소개하는 종합 플랫폼">
+    <meta name="keywords" content="K-culture, K-pop, K-drama, 한식, 한국문화, K-beauty, 한국영화">
+    
+    <!-- DaisyUI & Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+    
+    <!-- 커스텀 CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+    </style>
+</head>
+<body class="bg-base-100">
+    <!-- 네비게이션 -->
+    <div class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden mobile-menu-btn">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 mobile-menu hidden">
+                    <li><a href="#home">홈</a></li>
+                    <li><a href="#culture">문화 영역</a></li>
+                    <li><a href="#gallery">갤러리</a></li>
+                    <li><a href="#timeline">타임라인</a></li>
+                    <li><a href="#about">소개</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl font-bold text-primary" href="#home">
+                🇰🇷 K-Culture Hub
+            </a>
+        </div>
+        
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="#home" class="hover:text-primary">홈</a></li>
+                <li><a href="#culture" class="hover:text-primary">문화 영역</a></li>
+                <li><a href="#gallery" class="hover:text-primary">갤러리</a></li>
+                <li><a href="#timeline" class="hover:text-primary">타임라인</a></li>
+                <li><a href="#about" class="hover:text-primary">소개</a></li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end">
+            <button id="theme-toggle" class="btn btn-ghost btn-circle">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- 히어로 섹션 -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center z-10 relative">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 korean-decoration">
+                    K-Culture Hub
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    전 세계를 매료시키는 한국 문화의 모든 것을 만나보세요
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#culture" class="btn btn-korean btn-lg">문화 탐험하기</a>
+                    <a href="#gallery" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">갤러리 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 메인 슬라이더 -->
+    <section class="py-16 bg-base-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 korean-decoration">한국 문화의 하이라이트</h2>
+            
+            <div id="hero-slider" class="slider-container max-w-4xl mx-auto">
+                <div class="relative overflow-hidden rounded-2xl">
+                    <div class="slide">
+                        <img src="images/kpop-stage.jpg" alt="K-pop 공연" class="w-full h-96 object-cover">
+                        <div class="slide-content">
+                            <h3 class="text-2xl font-bold mb-2">K-pop의 글로벌 열풍</h3>
+                            <p>BTS, 뉴진스 등 K-pop 아티스트들이 전 세계를 사로잡고 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/korean-food.jpg" alt="한국 음식" class="w-full h-96 object-cover">
+                        <div class="slide-content">
+                            <h3 class="text-2xl font-bold mb-2">건강한 한식의 매력</h3>
+                            <p>김치, 비빔밥, 불고기 등 영양가 높은 한국 전통 음식을 소개합니다.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/hanbok-modern.jpg" alt="현대적 한복" class="w-full h-96 object-cover">
+                        <div class="slide-content">
+                            <h3 class="text-2xl font-bold mb-2">전통과 현대의 조화</h3>
+                            <p>한복의 현대적 재해석으로 전통 문화가 새롭게 태어나고 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="prev-btn absolute left-4 top-1/2 transform -translate-y-1/2 btn btn-circle btn-ghost text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button class="next-btn absolute right-4 top-1/2 transform -translate-y-1/2 btn btn-circle btn-ghost text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                
+                <div class="slider-indicators flex justify-center mt-4 space-x-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문화 영역별 탭 섹션 -->
+    <section id="culture" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 korean-decoration">한국 문화 영역</h2>
+            
+            <div id="culture-tabs" class="max-w-6xl mx-auto">
+                <div class="tabs tabs-boxed tabs-custom justify-center mb-8 flex-wrap">
+                    <a class="tab tab-active" data-tab="kpop">K-pop</a>
+                    <a class="tab" data-tab="kdrama">K-drama</a>
+                    <a class="tab" data-tab="kfood">한식</a>
+                    <a class="tab" data-tab="tradition">전통문화</a>
+                    <a class="tab" data-tab="kbeauty">K-beauty</a>
+                    <a class="tab" data-tab="kmovie">한국영화</a>
+                </div>
+                
+                <div class="tab-content" data-tab="kpop">
+                    <!-- K-pop 콘텐츠가 동적으로 로드됩니다 -->
+                </div>
+                <div class="tab-content hidden" data-tab="kdrama">
+                    <!-- K-drama 콘텐츠가 동적으로 로드됩니다 -->
+                </div>
+                <div class="tab-content hidden" data-tab="kfood">
+                    <!-- 한식 콘텐츠가 동적으로 로드됩니다 -->
+                </div>
+                <div class="tab-content hidden" data-tab="tradition">
+                    <!-- 전통문화 콘텐츠가 동적으로 로드됩니다 -->
+                </div>
+                <div class="tab-content hidden" data-tab="kbeauty">
+                    <!-- K-beauty 콘텐츠가 동적으로 로드됩니다 -->
+                </div>
+                <div class="tab-content hidden" data-tab="kmovie">
+                    <!-- 한국영화 콘텐츠가 동적으로 로드됩니다 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 갤러리 섹션 -->
+    <section id="gallery" class="py-16 bg-base-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 korean-decoration">K-Culture 갤러리</h2>
+            
+            <div id="gallery-grid" class="max-w-6xl mx-auto">
+                <!-- 갤러리 이미지들이 동적으로 로드됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 갤러리 모달 -->
+    <input type="checkbox" id="gallery-modal" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box max-w-4xl">
+            <img id="modal-image" src="" alt="" class="w-full rounded-lg mb-4">
+            <h3 id="modal-title" class="font-bold text-lg mb-2"></h3>
+            <p id="modal-description" class="text-base-content/70"></p>
+            <div class="modal-action">
+                <label for="gallery-modal" class="btn">닫기</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- 타임라인 섹션 -->
+    <section id="timeline" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 korean-decoration">한국 문화 발전사</h2>
+            
+            <div class="flex justify-center mb-8 flex-wrap gap-2">
+                <button class="btn btn-sm timeline-filter btn-primary" data-category="all">전체</button>
+                <button class="btn btn-sm timeline-filter" data-category="kpop">K-pop</button>
+                <button class="btn btn-sm timeline-filter" data-category="kdrama">K-drama</button>
+                <button class="btn btn-sm timeline-filter" data-category="kfood">한식</button>
+                <button class="btn btn-sm timeline-filter" data-category="tradition">전통문화</button>
+                <button class="btn btn-sm timeline-filter" data-category="kbeauty">K-beauty</button>
+                <button class="btn btn-sm timeline-filter" data-category="kmovie">한국영화</button>
+            </div>
+            
+            <div id="timeline-container" class="max-w-4xl mx-auto">
+                <!-- 타임라인 이벤트들이 동적으로 로드됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 아코디언 섹션 -->
+    <section class="py-16 bg-base-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 korean-decoration">자주 묻는 질문</h2>
+            
+            <div id="faq-accordion" class="max-w-3xl mx-auto">
+                <div class="collapse collapse-arrow bg-base-100 mb-4">
+                    <input type="radio" name="faq-accordion" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">
+                        K-pop이 전 세계적으로 인기를 얻은 이유는 무엇인가요?
+                    </div>
+                    <div class="collapse-content">
+                        <p>K-pop은 뛰어난 음악성, 완성도 높은 퍼포먼스, 매력적인 비주얼, 그리고 소셜미디어를 통한 글로벌 소통으로 전 세계 팬들의 사랑을 받고 있습니다. 특히 BTS, 블랙핑크, 뉴진스 등의 아티스트들이 언어의 장벽을 넘어 감동을 전달하고 있습니다.</p>
+                    </div>
+                </div>
+                
+                <div class="collapse collapse-arrow bg-base-100 mb-4">
+                    <input type="radio" name="faq-accordion" />
+                    <div class="collapse-title text-xl font-medium">
+                        한식이 건강식으로 주목받는 이유는 무엇인가요?
+                    </div>
+                    <div class="collapse-content">
+                        <p>한식은 발효식품인 김치를 비롯해 다양한 채소와 곡물을 균형있게 섭취할 수 있는 식단입니다. 특히 김치는 프로바이오틱스가 풍부하고, 비빔밥은 영양소가 골고루 들어있어 세계적으로 건강식으로 인정받고 있습니다.</p>
+                    </div>
+                </div>
+                
+                <div class="collapse collapse-arrow bg-base-100 mb-4">
+                    <input type="radio" name="faq-accordion" />
+                    <div class="collapse-title text-xl font-medium">
+                        K-beauty의 특징은 무엇인가요?
+                    </div>
+                    <div class="collapse-content">
+                        <p>K-beauty는 10단계 스킨케어 루틴으로 유명하며, 자연 성분을 활용한 혁신적인 제품들로 주목받고 있습니다. 특히 슬로우 에이징, 글래스 스킨 등의 트렌드를 선도하며 전 세계 뷰티 시장에 영향을 미치고 있습니다.</p>
+                    </div>
+                </div>
+                
+                <div class="collapse collapse-arrow bg-base-100 mb-4">
+                    <input type="radio" name="faq-accordion" />
+                    <div class="collapse-title text-xl font-medium">
+                        한국 전통문화의 현대적 재해석은 어떻게 이루어지고 있나요?
+                    </div>
+                    <div class="collapse-content">
+                        <p>한복의 현대적 디자인, 전통 음악과 현대 음악의 융합, 전통 건축과 현대 건축의 조화 등 다양한 방식으로 전통문화가 현대적으로 재해석되고 있습니다. 이를 통해 젊은 세대들도 전통문화에 쉽게 접근할 수 있게 되었습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 korean-decoration">K-Culture Hub 소개</h2>
+                <p class="text-lg mb-8 leading-relaxed">
+                    K-Culture Hub는 한국 문화의 다양한 영역을 종합적으로 소개하는 플랫폼입니다. 
+                    K-pop, K-drama, 한식, 전통문화, K-beauty, 한국영화 등 한국 문화의 모든 면을 
+                    깊이 있게 탐구하고 전 세계에 알리는 것이 우리의 목표입니다.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="card bg-base-100 shadow-xl culture-card">
+                        <div class="card-body text-center">
+                            <div class="text-4xl mb-4">🎵</div>
+                            <h3 class="card-title justify-center">음악과 엔터테인먼트</h3>
+                            <p>K-pop과 K-drama를 통해 한국의 창조적 에너지를 경험하세요.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-xl culture-card">
+                        <div class="card-body text-center">
+                            <div class="text-4xl mb-4">🍜</div>
+                            <h3 class="card-title justify-center">음식과 라이프스타일</h3>
+                            <p>건강한 한식과 K-beauty로 한국의 생활 문화를 만나보세요.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-xl culture-card">
+                        <div class="card-body text-center">
+                            <div class="text-4xl mb-4">🏛️</div>
+                            <h3 class="card-title justify-center">전통과 예술</h3>
+                            <p>한국의 전통문화와 현대 영화 예술의 조화를 감상하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <div class="text-2xl font-bold text-primary mb-4">🇰🇷 K-Culture Hub</div>
+            <p class="font-bold">
+                한국 문화의 모든 것을 담은 종합 플랫폼
+            </p>
+            <p>전 세계에 한국 문화의 아름다움을 전파합니다</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a class="link link-hover">홈</a>
+                <a class="link link-hover">문화 영역</a>
+                <a class="link link-hover">갤러리</a>
+                <a class="link link-hover">타임라인</a>
+                <a class="link link-hover">소개</a>
+            </div>
+        </div>
+        <div>
+            <p>Copyright © 2025 - K-Culture Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
